@@ -1,0 +1,27 @@
+{
+    "name": "@firestarter/backend",
+    "version": "1.0.0",
+    "private": true,
+    "type": "module",
+    "dependencies": {
+        "tslib": "^2.6.3",
+        "viem": "^2.17.5"
+    },
+    "devDependencies": {
+        "@eslint/compat": "^1.1.1",
+        "@eslint/eslintrc": "^3.1.0",
+        "@eslint/js": "^9.7.0",
+        "@types/eslint": "^8.56.10",
+        "@types/eslint__js": "^8.42.3",
+        "@types/node": "^20.14.11",
+        "eslint": "^9.7.0",
+        "eslint-config-prettier": "^9.1.0",
+        "eslint-plugin-import": "^2.29.1",
+        "eslint-plugin-simple-import-sort": "^12.1.1",
+        "globals": "^15.8.0",
+        "nodemon": "^3.1.4",
+        "prettier": "3.3.3",
+        "typescript": "^5.5.3",
+        "typescript-eslint": "^7.16.1"
+    }
+}

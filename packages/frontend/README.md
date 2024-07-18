@@ -28,10 +28,14 @@ These are needed at runtime (although Next will take care of bundling them for u
 - `eslint` — javascript linting tool (use via `make lint` or `make check`, and `make lint-fix`)
   - NOTE: Eslint must not be updated to version 9 until Next.js supports it (currently: Next 14.2.3)
     - This will require migrating the eslint config to a new format 
+    - The `backend` package of this repository has been migrated to the new format — its
+      `eslint.config.js` file is equivalent to this `.eslintrc.cjs` file.
   - `eslint-config-next` —  eslint config for use with Next.js
   - `@typescript-eslint/parser` — parser enabling eslint to lint Typescript files 
   - `@typescript-eslint/eslint-plugin` — Typescript rules for eslint
    `eslint-config-prettier` — disables eslint rules that conflict with prettier (see below)
+  - `eslint-plugin-import` — rules for import statements
+  - `eslint-plugin-simple-import-sort` — rules for sorting import statements
 - `tailwindcss` — a collection of css styles + a tool to generate CSS files that only include used styles,
    with peer dependencies `postcss` (CSS post-processing) and `autoprefixer` (postcss plugin that adds
    browser prefixes as needed (e.g. `-webkit-`))
@@ -54,7 +58,9 @@ These are needed at runtime (although Next will take care of bundling them for u
 
 Typescript configuration. Options are documented [here](https://www.typescriptlang.org/tsconfig).
 
-- `target`: the Javascript version to compile to, using `es2022` as that is the most recent version
+- `target`: the Javascript version to compile to, using `es2022` as that is the most recent version.
+   This should be `es2023` but it's currently not a valid option (as its identical to `es2022`, though that one does not include the `es2023` libraries).
+   This [should be fixed][es2023-fix] soon.
 - `baseUrl`:  where to look for source files
 - `paths`:  a set of path remappings/aliases
 - `lib`:  standard JS libs to include, we want DOM access manipulation and built-in libraries
@@ -91,6 +97,8 @@ Typescript configuration. Options are documented [here](https://www.typescriptla
 
 IDE Note: In IntelliJ, you need to configure code style for Javascript and Typescript not to
 automatically add the `.js` extensions to imports.
+
+[es2023-fix]: https://github.com/microsoft/TypeScript/issues/57683
 
 ### `.eslintrc.cjs`
 

@@ -6,23 +6,22 @@
             "src/*": ["./*"],
             "contracts/*": ["../../contracts/*"]
         },
-        "lib": ["dom", "dom.iterable", "es2023"],
+        "lib": ["es2023"],
         "allowJs": true,
         "checkJs": true,
-        "skipLibCheck": true,
+        "skipLibCheck": false,
         "strict": true,
         "alwaysStrict": true,
         "forceConsistentCasingInFileNames": true,
-        "noEmit": true,
         "incremental": true,
         "esModuleInterop": true,
         "importHelpers": true,
-        "module": "esnext",
-        "moduleResolution": "node10",
+        "module": "nodenext",
+        "moduleResolution": "nodenext",
         "resolveJsonModule": true,
         "isolatedModules": true,
         "jsx": "preserve"
     },
-    "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+    "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.js"],
     "exclude": ["node_modules"]
 }

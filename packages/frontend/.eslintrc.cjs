@@ -5,7 +5,7 @@ const config = {
     parserOptions: {
         project: "./tsconfig.json",
         sourceType: "module",
-        ecmaVersion: "latest",
+        ecmaVersion: 2023,
     },
     plugins: ["@typescript-eslint", "simple-import-sort"],
     ignorePatterns: ["node_modules", "/.next", "/src/generated.ts"],

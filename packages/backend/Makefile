@@ -1,21 +1,32 @@
+# Builds the backend.
 build:
-	# pnpm wagmi generate
-	pnpm next build
+	pnpm tsc --outDir dist
 .PHONY: build
 
-# Serves webapp in production environment (after building)
-serve:
-	pnpm next start
-.PHONY: serve
+# Builds the backend every time input files changes.
+build-watch:
+	pnpm tsc --outDir dist --watch
+.PHONY: build-watch
 
-# Serves webapp in dev environment (building not required)
-dev:
-	pnpm next dev
-.PHONY: dev
+# Run the backend.
+run:
+	pnpm node dist/index.js
+.PHONY: run
+
+# Reruns the backend every time input files changes — this will not rebuild, use `build-watch` for
+# that.
+run-watch:
+	pnpm nodemon dist/index.js
+.PHONY: run
+
+# Removes the built backend (dist directory).
+clean:
+	rm -rf dist
+.PHONY: clean
 
 # Runs linter (use make check instead which also checks typescript typing).
 lint:
-	pnpm next lint --max-warnings 0
+	pnpm eslint --max-warnings 0
 .PHONY: lint
 
 # Fixes those linting errors that can be fixed automatically.
