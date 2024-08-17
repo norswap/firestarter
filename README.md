@@ -1,6 +1,6 @@
 # Firestarter
 
-Web3 project temmplate.
+Web3 project template.
 
 ## Installation
 
@@ -37,7 +37,7 @@ make webdev
 This will do the following:
 
 - Run anvil (local EVM node) at localhost:8545 with chain ID 1337
-  (this chain comes preconfigured in Metamask and other wallets as "Localhost")
+  (this chain comes pre-configured in Metamask and other wallets as "Localhost")
 - Run the NextJS dev command (web server + live reload)
 - Deploy the contracts to the local node
 
